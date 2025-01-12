@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class StarshipController extends AbstractController
 {
 
-    #[Route('/starships/{id<\d+>}', name: 'app_starships_show')]
+    #[Route('/starships/{id<\d+>}', name: 'app_starship_show')]
     public function show(int $id, StarshipRepository $starshipRepository): Response
     {
         $ship = $starshipRepository->find($id); 
