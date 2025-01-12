@@ -23,6 +23,11 @@
         <table>
             <tr>
                 <th>Name</th>
+                <td>
+                    <a href="{{ path('app_starships_show', {'id': myShip.id}) }}">
+                        {{ myShip.name }}
+                    </a>
+                </td>
                 <td>{{ myShip.name }}</td>
             </tr>
             <tr>
