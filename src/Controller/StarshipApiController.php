@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Starship;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,8 +12,11 @@ class StarshipApiController extends AbstractController
 {
 
     #[Route('/api/starships')]
-    public function getCollection(): Response
+    public function getCollection(LoggerInterface $logger): Response
     {
+
+        $logger->info('starships collection retrieved');
+
         $starships = [
             new Starship(
                 1,
